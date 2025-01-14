@@ -69,7 +69,8 @@ class LoginPage(QWidget):
         self.switch_to_todo = switch_to_todo_callback
         self.setWindowTitle("登入頁面")
         self.resize(400, 300)
-
+```
+```python
         self.accounts_file = "accounts.json"
         self.load_accounts()
 
