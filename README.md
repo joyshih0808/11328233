@@ -262,6 +262,10 @@ class ToDoApp(QWidget):
 每個標籤頁可以顯示不同的內容（例如不同類別的任務）。
 - self.tabs 是標籤頁物件，用來管理和顯示不同分類的任務。
 2. self.taskLists 是一個字典，用來儲存每個分類標籤頁對應的任務列表。key:任務分類 value:每個分類標籤頁中的 QListWidget（用來顯示任務）。
+3. 將 self.tabs（標籤頁容器）作為一個元件，加入主佈局中。
+這樣介面就可以顯示「分類標籤」和「對應的任務列表」。
+4. 加入登出按鈕。
+5. setLayout() 方法用來設定整體介面的佈局。
 
 ```python
     def load_tasks(self):
@@ -308,6 +312,9 @@ class ToDoApp(QWidget):
         QMessageBox.information(self, "登出", "您已成功登出")
         self.switch_to_login()
 ```
+- 方法:
+1. 載入上次的資料
+2. 
 ```python
 class MainApp(QStackedWidget):
     def __init__(self):
