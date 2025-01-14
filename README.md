@@ -189,13 +189,28 @@ class ToDoApp(QWidget):
         self.load_tasks()
 
         layout = QVBoxLayout()
+
 ``` 
+1. 使用 f-string 語法來建立檔案名稱
+2. 呼叫 load_tasks 方法
+- 如果檔案存在：
+ 使用 json.load 讀取檔案內容，並將資料存入 self.tasks。
+- 如果檔案不存在：
+將 self.tasks 初始化為空字典 {}，表示該使用者目前還沒有任何任務。
+3. 主佈局為垂直佈局
+
+```python
         self.welcomeLabel = QLabel(f"歡迎，{self.username}！")
         self.welcomeLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(self.welcomeLabel)
 
         control_layout = QHBoxLayout()
+```
+1. 顯現歡迎字樣並置中
+2. 將歡迎的標籤加入主佈局
+3. 控制佈局為水平佈局
 
+```python
         self.taskInput = QLineEdit()
         self.taskInput.setPlaceholderText("輸入任務")
         control_layout.addWidget(self.taskInput)
@@ -217,9 +232,17 @@ class ToDoApp(QWidget):
         self.addButton = QPushButton("新增任務")
         self.addButton.clicked.connect(self.add_task)
         control_layout.addWidget(self.addButton)
+```
+1. 任務輸入框、任務類別選擇、優先等級選擇、截止日期選擇、新增任務按鈕利用.addwidget加入控制佈局
+2. 元件的排列順序是：輸入框 > 類別選擇 > 優先等級 > 截止日期 > 按鈕。
+- 注意:因為控制佈局為水平佈局
 
+```python
         layout.addLayout(control_layout)
+```
+- 控制佈局加入主佈局(垂直佈局)
 
+```python
         self.tabs = QTabWidget()
         self.taskLists = {}
 
@@ -233,7 +256,14 @@ class ToDoApp(QWidget):
         layout.addWidget(self.logoutButton)
 
         self.setLayout(layout)
+```
+1. 建立標籤頁容器:
+- QTabWidget 是一種用來組織多個標籤頁（Tab）的元件。
+每個標籤頁可以顯示不同的內容（例如不同類別的任務）。
+- self.tabs 是標籤頁物件，用來管理和顯示不同分類的任務。
+2. self.taskLists 是一個字典，用來儲存每個分類標籤頁對應的任務列表。key:任務分類 value:每個分類標籤頁中的 QListWidget（用來顯示任務）。
 
+```python
     def load_tasks(self):
         if os.path.exists(self.tasks_file):
             with open(self.tasks_file, "r") as f:
