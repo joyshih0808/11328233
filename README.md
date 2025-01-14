@@ -134,7 +134,9 @@ class LoginPage(QWidget):
     def save_accounts(self):
         with open(self.accounts_file, "w") as f:
             json.dump(self.accounts, f)
-
+```
+- 處理帳號資料
+```python
     def login(self):
         username = self.usernameInput.text().strip()
         password = self.passwordInput.text().strip()
@@ -144,7 +146,10 @@ class LoginPage(QWidget):
             self.switch_to_todo(username)
         else:
             QMessageBox.warning(self, "錯誤", "帳號或密碼錯誤")
-
+```
+- 登入函數:
+1. 將前面登入頁面輸入的名字和密碼放入username和password做儲存
+2. 
     def register(self):
         username = self.usernameInput.text().strip()
         password = self.passwordInput.text().strip()
