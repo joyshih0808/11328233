@@ -313,8 +313,20 @@ class ToDoApp(QWidget):
         self.switch_to_login()
 ```
 - 方法:
-1. 載入上次的資料
-2. 
+1. 載入上次的資料方法:
+2. 儲存資料方法:
+- 定義了一個名為 save_tasks 的方法，用於儲存任務資料。
+self： 表示這是類別中的方法，能夠訪問類別內的屬性（如 self.tasks 和 self.tasks_file）。
+- open(self.tasks_file, "w")：
+開啟或建立檔案，檔名來自 self.tasks_file（例如 john_tasks.json）。
+"w" 模式： 代表以 寫入模式（write mode） 開啟檔案。如果檔案已存在，會覆蓋原內容；如果檔案不存在，則會自動建立。
+- as f：表示將打開的檔案物件取名為 f。
+- json.dump()：
+將 Python 的資料結構（如字典或清單）序列化為 JSON 格式，並寫入到檔案中。
+- f：檔案物件，表示將內容寫入到 self.tasks_file 指定的檔案。
+3. 加入任務方法
+4. 登出資料的方法
+
 ```python
 class MainApp(QStackedWidget):
     def __init__(self):
