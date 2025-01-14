@@ -107,7 +107,7 @@ class LoginPage(QWidget):
         self.passwordInput.setEchoMode(QLineEdit.EchoMode.Password)
         layout.addWidget(self.passwordInput)
 ```
--帳號與密碼輸入框
+- 帳號與密碼輸入框
 ```python
         button_layout = QHBoxLayout()
         self.loginButton = QPushButton("登入")
@@ -120,7 +120,10 @@ class LoginPage(QWidget):
 
         layout.addLayout(button_layout)
         self.setLayout(layout)
-
+```
+- 加入登入和註冊按鈕
+1. 
+``` python
     def load_accounts(self):
         if os.path.exists(self.accounts_file):
             with open(self.accounts_file, "r") as f:
