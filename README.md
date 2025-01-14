@@ -46,6 +46,7 @@
 ## 程式碼介紹
 這個程式有三個class:LoginPage、MainApp、ToDoApp。LoginPage負責處理登入的頁面，包含登入和註冊的功能。MainApp包含切換頁面的部份。ToDoApp包含代辦是代辦事項的程式。
 ### 匯入模組和設定
+
 ```python
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
@@ -57,11 +58,13 @@ import json
 import os
 import sys
 ```
-PyQt6.QtWidgets：用來建立視窗、布局與介面元件。
-PyQt6.QtCore：提供核心功能，例如日期 (QDate) 和對齊方式 (Qt 對齊旗標)。
-json 和 os：處理帳號與任務的資料存取，儲存為 JSON 檔案。
-sys：用於管理應用程式的主迴圈。
+- PyQt6.QtWidgets：用來建立視窗、布局與介面元件。
+- PyQt6.QtCore：提供核心功能，例如日期 (QDate) 和對齊方式 (Qt 對齊旗標)。
+- json 和 os：處理帳號與任務的資料存取，儲存為JSON 檔案。
+- sys：用於管理應用程式的主迴圈。
+
 ### 登入頁面程式碼
+
 ```python
 class LoginPage(QWidget):
     def __init__(self, switch_to_todo_callback):
@@ -70,6 +73,10 @@ class LoginPage(QWidget):
         self.setWindowTitle("登入頁面")
         self.resize(400, 300)
 ```
+- switch_to_todo_callback 用於切換到代辦事項頁面
+- 命名頁面為登入頁面
+- 調整大小
+
 ```python
         self.accounts_file = "accounts.json"
         self.load_accounts()
