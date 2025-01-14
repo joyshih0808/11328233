@@ -122,7 +122,7 @@ class LoginPage(QWidget):
         self.setLayout(layout)
 ```
 - 加入登入和註冊按鈕
-1. 
+
 ``` python
     def load_accounts(self):
         if os.path.exists(self.accounts_file):
