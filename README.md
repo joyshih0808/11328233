@@ -33,8 +33,8 @@
     - 註冊功能:
    2. 任務清單頁面:
 ## 學習歷程
-1. 安裝PQT6
-2. 構思想要的功能:
+1. 安裝PYQT6
+2. 構思想要的功能
 3. 主程式編寫
 4. 美化圖形介面
 ## 用到的元件
@@ -45,6 +45,7 @@
 ![alt text](https://github.com/joyshih0808/11328233/blob/main/%E5%9C%96%E7%89%87/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-01-14%20142054.png)
 ## 程式碼介紹
 這個程式有三個class:LoginPage、MainApp、ToDoApp。LoginPage負責處理登入的頁面，包含登入和註冊的功能。MainApp包含切換頁面的部份。ToDoApp包含代辦是代辦事項的程式。
+
 ```python
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
