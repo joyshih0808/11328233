@@ -169,7 +169,9 @@ class LoginPage(QWidget):
             QMessageBox.information(self, "成功", "註冊成功，請重新登入！")
 ```
 - 註冊函數:
-1. 
+1. 有三種情況:沒有輸入這帳號密碼、user已存在和其他情況(成功註冊)。
+
+### 代辦事項頁面程式
 
 ```python
 class ToDoApp(QWidget):
