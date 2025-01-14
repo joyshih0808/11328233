@@ -94,7 +94,10 @@ class LoginPage(QWidget):
         self.title = QLabel("歡迎使用代辦事項應用程式")
         self.title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(self.title)
+```
+- 加入標題並置中
 
+```python
         self.usernameInput = QLineEdit()
         self.usernameInput.setPlaceholderText("輸入帳號")
         layout.addWidget(self.usernameInput)
@@ -103,7 +106,9 @@ class LoginPage(QWidget):
         self.passwordInput.setPlaceholderText("輸入密碼")
         self.passwordInput.setEchoMode(QLineEdit.EchoMode.Password)
         layout.addWidget(self.passwordInput)
-
+```
+-帳號與密碼輸入框
+```python
         button_layout = QHBoxLayout()
         self.loginButton = QPushButton("登入")
         self.loginButton.clicked.connect(self.login)
