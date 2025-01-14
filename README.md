@@ -73,7 +73,11 @@ class LoginPage(QWidget):
         self.setWindowTitle("登入頁面")
         self.resize(400, 300)
 ```
-- switch_to_todo_callback 用於切換到代辦事項頁面
+- switch_to_todo_callback 用於切換到代辦事項頁面:
+(1) LoginPage 初始化時，從外部傳遞一個函數 switch_to_todo_callback。
+(2) 這個函數的邏輯是切換到代辦事項頁面（ToDoApp）。
+(3) 當用戶在登入頁面中輸入正確的帳號和密碼後，LoginPage 調用 self.switch_to_todo(username)，完成頁面切換。
+
 - 命名頁面為登入頁面
 - 調整大小
 
