@@ -324,8 +324,11 @@ self： 表示這是類別中的方法，能夠訪問類別內的屬性（如 se
 - json.dump()：
 將 Python 的資料結構（如字典或清單）序列化為 JSON 格式，並寫入到檔案中。
 - f：檔案物件，表示將內容寫入到 self.tasks_file 指定的檔案。
-3. 加入任務方法
-4. 登出資料的方法
+3. 加入頁籤的方法:每個任務分類（如 "Work", "Personal", "Other"）建立一個新的頁籤(Tab)，並將該頁籤添加到主界面中
+4. 加入任務方法
+5. 登出資料的方法
+
+### 切換頁面程式
 
 ```python
 class MainApp(QStackedWidget):
@@ -343,6 +346,9 @@ class MainApp(QStackedWidget):
     def show_login_page(self):
         self.setCurrentWidget(self.loginPage)
 ```
+1. MainApp 類別繼承自 QStackedWidget，表示這個類別能夠顯示多個頁面，但每次只能顯示一個頁面。
+super().__init__()：呼叫父類別（QStackedWidget）的初始化方法來初始化 MainApp 類別。
+2. 
 ```python
 if __name__ == "__main__":
     app = QApplication(sys.argv)
