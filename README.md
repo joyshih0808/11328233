@@ -348,7 +348,21 @@ class MainApp(QStackedWidget):
 ```
 1. MainApp 類別繼承自 QStackedWidget，表示這個類別能夠顯示多個頁面，但每次只能顯示一個頁面。
 super().__init__()：呼叫父類別（QStackedWidget）的初始化方法來初始化 MainApp 類別。
-2. 
+2. self.loginPage = LoginPage(self.show_todo_page)：
+- 這行創建了 LoginPage 類別的實例，並將 self.show_todo_page 方法作為參數傳遞給它。
+- LoginPage 類別中的 switch_to_todo 會被設置為 self.show_todo_page，因此當用戶成功登入時，show_todo_page 方法會被呼叫，並且會顯示代辦事項頁面。
+3. self.addWidget(self.loginPage)：
+- 將創建的登入頁面 (self.loginPage) 添加到 QStackedWidget 中，這樣它就會成為當前顯示的頁面。
+4. 初始化 todoPage 屬性
+5. self.todoPage = ToDoApp(username, self.show_login_page)：
+創建一個 ToDoApp 類別的實例，並將用戶名 (username) 和返回登入頁面的函數 (self.show_login_page) 傳遞給它。
+ToDoApp 類別用來顯示代辦事項頁面，並將其賦值給 self.todoPage。
+6.def show_login_page(self):
+        self.setCurrentWidget(self.loginPage)
+- 顯示登出頁面
+
+### 主程式啟動
+
 ```python
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -356,6 +370,8 @@ if __name__ == "__main__":
     mainApp.show()
     sys.exit(app.exec())
 ```
+-  mainApp = MainApp():
+這一行創建了 MainApp 類別的實例。這是整個應用程式的主要界面，包含了登入頁面和代辦事項頁面之間的切換。
 ## 成果展現
 ## 主題:四子棋
 ### 進度
