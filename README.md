@@ -84,7 +84,11 @@ class LoginPage(QWidget):
 ```python
         self.accounts_file = "accounts.json"
         self.load_accounts()
+```
+- 存放json檔的檔名
+- 檢查json檔是否存在
 
+```python
         layout = QVBoxLayout()
 
         self.title = QLabel("歡迎使用代辦事項應用程式")
