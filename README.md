@@ -149,7 +149,12 @@ class LoginPage(QWidget):
 ```
 - 登入函數:
 1. 將前面登入頁面輸入的名字和密碼放入username和password做儲存
-2. 
+2. self.accounts是一個字典，儲存帳號和密碼的配對，形式為{username:password}。self.accounts[username]識字點中username所對應的password。
+3.  條件:
+如果有兩個條件:當輸入的username在字典中，且輸入的username在字典中所對應的password和user輸入的password一樣樣時，會跳出一格訊息視窗寫:成功，歡迎回來，並顯現出user的名字
+如果條件為否，則跳出訊息:錯誤，帳號或密碼錯誤
+
+```python
     def register(self):
         username = self.usernameInput.text().strip()
         password = self.passwordInput.text().strip()
@@ -163,6 +168,9 @@ class LoginPage(QWidget):
             self.save_accounts()
             QMessageBox.information(self, "成功", "註冊成功，請重新登入！")
 ```
+- 註冊函數:
+1. 
+
 ```python
 class ToDoApp(QWidget):
     def __init__(self, username, switch_to_login_callback):
