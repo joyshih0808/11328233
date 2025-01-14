@@ -181,12 +181,15 @@ class ToDoApp(QWidget):
         self.switch_to_login = switch_to_login_callback
         self.setWindowTitle(f"{username} 的代辦事項")
         self.resize(600, 400)
+```
+- 命名代辦事項頁面和大小
 
+```python
         self.tasks_file = f"{self.username}_tasks.json"
         self.load_tasks()
 
         layout = QVBoxLayout()
-
+``` 
         self.welcomeLabel = QLabel(f"歡迎，{self.username}！")
         self.welcomeLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(self.welcomeLabel)
